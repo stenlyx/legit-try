@@ -7,5 +7,4 @@ Flask-SQLAlchemy
 flask-marshmallow
 marshmallow-sqlalchemy
 marshmallow
-flask-uploads
-itsdangerous
+uwsgi
