@@ -10,6 +10,7 @@ class ItemModel(db.Model):
     brand = db.Column(db.String(80), nullable=False)
     name = db.Column(db.String(80), nullable=False, unique=True)
     price = db.Column(db.Float(precision=2), nullable=False)
+    price_on_sale = db.Column(db.Float(precision=2), default=None)
     amount = db.Column(db.Integer, default=1)
     size = db.Column(db.String(80), nullable=False)
     type = db.Column(db.String(80), nullable=False)
@@ -19,6 +20,8 @@ class ItemModel(db.Model):
     new = db.Column(db.Boolean, default=False)
     bestseller = db.Column(db.Boolean, default=False)
     sale = db.Column(db.Boolean, default=False)
+    favorite = db.Column(db.Boolean, default=False)
+    addedToCart = db.Column(db.Boolean, default=False)
 
     @classmethod
     def find_by_name(cls, name: str) -> "ItemModel":
