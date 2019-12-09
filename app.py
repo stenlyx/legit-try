@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from marshmallow import ValidationError
@@ -13,6 +14,7 @@ from resources.item import Item, ItemList, New, Bestseller, Brand, Sale
 from resources.post import PostList, Post
 
 app = Flask(__name__)
+app.config["CORS_HEADERS"] = "Content-Type"
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///data.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["PROPAGATE_EXCEPTIONS"] = True
@@ -55,6 +57,7 @@ api.add_resource(TokenRefresh, "/refresh")
 api.add_resource(UserLogout, "/logout")
 
 if __name__ == "__main__":
+
     db.init_app(app)
     ma.init_app(app)
     app.run(port=5000, debug=True)

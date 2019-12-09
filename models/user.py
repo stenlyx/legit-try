@@ -11,8 +11,17 @@ class UserModel(db.Model):
     username = db.Column(db.String(80), nullable=False, unique=True)
     password = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(80), nullable=False, unique=True)
-
-
+    phone = db.Column(db.String(80), nullable=False, unique=True)
+    first_name = db.Column(db.String(80), nullable=False)
+    last_name = db.Column(db.String(80), nullable=False)
+    middle_name = db.Column(db.String(80), nullable=False)
+    region = db.Column(db.String(80), nullable=False)
+    street = db.Column(db.String(80), nullable=False)
+    city = db.Column(db.String(80), nullable=False)
+    index = db.Column(db.String(80), nullable=False)
+    house = db.Column(db.String(80), nullable=False)
+    corpus = db.Column(db.String(80), nullable=False)
+    flat = db.Column(db.String(80), nullable=False)
 
     @classmethod
     def find_by_username(cls, username: str) -> "UserModel":

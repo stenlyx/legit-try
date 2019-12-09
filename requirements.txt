@@ -7,5 +7,6 @@ Flask-SQLAlchemy
 flask-marshmallow
 marshmallow-sqlalchemy
 marshmallow
+Flask-CORS
 uwsgi
 psycopg2
