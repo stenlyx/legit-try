@@ -53,6 +53,16 @@ class Item(Resource):
 
         if item:
             item.price = item_json["price"]
+            item.bestseller = item_json["bestseller"]
+            item.new = item_json["new"]
+            item.brand = item_json["brand"]
+            item._print = item_json["_print"]
+            item.sale = item_json["sale"]
+            item.material = item_json["material"]
+            item.color = item_json["color"]
+            item.price_on_sale = item_json["price_on_sale"]
+            item.size = item_json["size"]
+            item.type = item_json["type"]
         else:
             item_json["name"] = name
             item = item_schema.load(item_json)
