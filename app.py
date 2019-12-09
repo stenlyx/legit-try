@@ -57,7 +57,7 @@ api.add_resource(TokenRefresh, "/refresh")
 api.add_resource(UserLogout, "/logout")
 
 if __name__ == "__main__":
-
     db.init_app(app)
     ma.init_app(app)
+    CORS(app)
     app.run(port=5000, debug=True)

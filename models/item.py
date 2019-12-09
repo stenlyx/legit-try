@@ -10,7 +10,7 @@ class ItemModel(db.Model):
     brand = db.Column(db.String(80), nullable=False)
     name = db.Column(db.String(80), nullable=False, unique=True)
     price = db.Column(db.Float(precision=2), nullable=False)
-    price_on_sale = db.Column(db.Float(precision=2), default=None)
+    price_on_sale = db.Column(db.Float(precision=2))
     amount = db.Column(db.Integer, default=1)
     size = db.Column(db.String(80), nullable=False)
     type = db.Column(db.String(80), nullable=False)
